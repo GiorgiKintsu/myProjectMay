@@ -1,7 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { BlockIcon, ProfileIcon } from "../../components/icons";
 import { useState } from "react";
-import { AuthData } from "../../types/authType";
 import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -15,7 +14,7 @@ function Login() {
 
   console.log(authData);
 
-  const login = (e) => {
+  const login = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios.post("https://dummyjson.com/auth/login", authData).then((res) => {
       Cookies.set("token", res.data.token);
