@@ -4,7 +4,6 @@ import Cookies from "js-cookie";
 function Layout() {
   return (
     <div>
-      <h3>Welcome Home!</h3>
       <Outlet />
     </div>
   );
